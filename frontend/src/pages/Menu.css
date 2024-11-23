@@ -1,0 +1,32 @@
+.menu-container {
+  text-align: center;
+  background-color: rgb(212, 163, 115, 75%);
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-container img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.menu-container h1 {
+  font-weight: 700;
+  font-size: 50px;
+  height: auto;
+  width: auto;
+  margin-top: 10px;
+}
+
+.menu-container ul {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 0px;
+  padding: 0px 22% 0px 22%;
+  height: auto;
+  width: auto;
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "_id": "1",
+    "name": "KAHLUA CHOCOLATE MOUSSE [GLUTEN FREE]",
+    "price": 6.50,
+    "image": "/images/Cake Slice/BelgianChocolateMousse.jpg"
+  },
+  {
+    "_id": "2",
+    "name": "MANGO COCONUT MOUSSE [GLUTEN FREE]",
+    "price": 6.50,
+    "image": "/images/Cake Slice/MangoCoconutMousse_New.jpg"
+  },
+  {
+    "_id": "3",
+    "name": "STRAWBERRY SHORTCAKE",
+    "price": 6.50,
+    "image": "/images/Cake Slice/StrawberryShortcake.jpg"
+  }
+
+
+]
