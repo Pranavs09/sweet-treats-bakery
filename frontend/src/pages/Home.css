@@ -4,7 +4,8 @@
 }
 
 .home-container {
-    background-image: url('/public/images/background-image.png');
+    /* background-image: url('/public/images/background-image.png'); */
+    background-image: url("/public/images/background-image.png");
     width: auto;
     background-size: cover;
     background-position: center;
@@ -52,7 +53,7 @@
 
 .menu-item-container a {
     text-decoration: none;
-    color: white;
+    color: black;
 }
 
 .menu-item-container img {

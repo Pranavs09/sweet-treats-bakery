@@ -44,6 +44,52 @@ app.get("/api/mongo/products", async (req, res) => {
   }
 });
 
+app.post("/api/mongo/products", async (req, res) => {
+  try {
+    const { name, price, image } = req.body; // Extract fields from the request body
+    const newProduct = new MongoItem({ name, price, image }); // Create a new product
+    await newProduct.save(); // Save it to the database
+    res.status(201).json(newProduct); // Return the newly created product
+  } catch (err) {
+    console.error("Error creating product:", err.message);
+    res.status(500).json({ error: err.message });
+  }
+});
+
+app.put("/api/mongo/products/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { name, price, image } = req.body;
+    const updatedProduct = await MongoItem.findByIdAndUpdate(
+      id,
+      { name, price, image },
+      { new: true } // Return the updated document
+    );
+    if (!updatedProduct) {
+      return res.status(404).json({ error: "Product not found" });
+    }
+    res.json(updatedProduct);
+  } catch (err) {
+    console.error("Error updating product:", err.message);
+    res.status(500).json({ error: err.message });
+  }
+});
+
+app.delete("/api/mongo/products/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const deletedProduct = await MongoItem.findByIdAndDelete(id);
+    if (!deletedProduct) {
+      return res.status(404).json({ error: "Product not found" });
+    }
+    res.json({ message: "Product deleted successfully" });
+  } catch (err) {
+    console.error("Error deleting product:", err.message);
+    res.status(500).json({ error: err.message });
+  }
+});
+
+
 // Basic Route
 app.get("/", (req, res) => {
   res.send("Backend is running!");
